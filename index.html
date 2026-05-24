@@ -19,30 +19,46 @@
 </head>
 <body>
 
-    <nav class="fixed w-full z-50 glass px-6 py-3 flex justify-between items-center backdrop-blur-md">
-    <div class="flex items-center">
-        <img 
-            src="logo-carretero.png" 
-            alt="Logo El Carretero"
-            class="h-16 w-16 md:h-20 md:w-20 rounded-full object-cover border-2 border-orange-500 drop-shadow-[0_0_15px_rgba(234,88,12,0.75)] hover:scale-105 transition duration-300 cursor-pointer"
-            onclick="window.location.href='#inicio'"
-        >
-    </div>
+   <nav class="fixed w-full z-50 glass px-6 py-4 flex justify-between items-center backdrop-blur-md">
+  
+  <!-- Logo + nombre -->
+  <div class="flex items-center gap-3">
+    <img 
+      src="logo-carretero.png" 
+      alt="Logo El Carretero"
+      class="h-16 w-16 md:h-20 md:w-20 rounded-full object-contain p-1
+             border-2 border-orange-500 
+             drop-shadow-[0_0_15px_rgba(234,88,12,0.75)]
+             ring-4 ring-orange-500/20
+             hover:scale-105 hover:ring-orange-500/40 transition duration-300 cursor-pointer"
+      onclick="window.location.href='#inicio'"
+    >
+    <!-- Nombre al lado del logo -->
+    <span 
+      class="hidden md:block text-orange-400 font-semibold tracking-widest uppercase text-sm cursor-pointer"
+      onclick="window.location.href='#inicio'"
+    >
+      El Carretero
+    </span>
+  </div>
 
-    <div class="hidden md:flex space-x-8 font-medium">
-        <a href="#inicio" class="hover:text-orange-500 transition">Inicio</a>
-        <a href="#menu" class="hover:text-orange-500 transition">Menú</a>
-        <a href="#promos" class="hover:text-orange-500 transition">Promos</a>
-        <a href="#nosotros" class="hover:text-orange-500 transition">Nosotros</a>
-    </div>
+  <!-- Links -->
+  <div class="hidden md:flex space-x-8 font-medium">
+    <a href="#inicio" class="hover:text-orange-500 transition">Inicio</a>
+    <a href="#menu" class="hover:text-orange-500 transition">Menú</a>
+    <a href="#promos" class="hover:text-orange-500 transition">Promos</a>
+    <a href="#nosotros" class="hover:text-orange-500 transition">Nosotros</a>
+  </div>
 
-    <div class="flex items-center space-x-4">
-        <button onclick="toggleCart()" class="relative p-2 bg-orange-600 rounded-full hover:bg-red-700 transition">
-            <i class="fas fa-shopping-cart"></i>
-            <span id="cart-count" class="absolute -top-1 -right-1 bg-white text-black text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
-        </button>
-        <button class="md:hidden text-2xl text-white"><i class="fas fa-bars"></i></button>
-    </div>
+  <!-- Carrito + hamburguesa -->
+  <div class="flex items-center space-x-4">
+    <button onclick="toggleCart()" class="relative p-2 bg-orange-600 rounded-full hover:bg-red-700 transition">
+      <i class="fas fa-shopping-cart"></i>
+      <span id="cart-count" class="absolute -top-1 -right-1 bg-white text-black text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+    </button>
+    <button class="md:hidden text-2xl text-white"><i class="fas fa-bars"></i></button>
+  </div>
+
 </nav>
 
     <header id="inicio" class="h-screen flex items-center justify-center text-center px-4 hero-gradient">

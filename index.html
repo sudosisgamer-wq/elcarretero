@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         body { font-family: 'Poppins', sans-serif; background-color: #050505; color: white; }
         .hero-gradient { background: linear-gradient(rgba(0,0,0,0.6), rgba(5,5,5,1)), url('https://images.unsplash.com/photo-1550547660-d9450f859349?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; }
@@ -18,19 +19,17 @@
 </head>
 <body>
 
-    <!-- NAV BAR -->
     <nav class="fixed w-full z-50 glass px-6 py-4 flex justify-between items-center">
         <div class="flex items-center gap-3">
-    <img 
-        src="logo-carretero.jpeg" 
-        alt="Logo"
-        class="h-14 w-14 rounded-full object-cover border-2 border-orange-500 shadow-lg"
-    >
-
-    <div class="text-xl md:text-2xl font-black tracking-tight text-white">
-        EL <span class="text-orange-500">CARRETERO</span>
-    </div>
-     </div>
+            <img 
+                src="logo-carretero.jpeg" 
+                alt="Logo"
+                class="h-14 w-14 rounded-full object-cover border-2 border-orange-500 shadow-lg"
+            >
+            <div class="text-xl md:text-2xl font-black tracking-tight text-white">
+                EL <span class="text-orange-500">CARRETERO</span>
+            </div>
+        </div>
         <div class="hidden md:flex space-x-8 font-medium">
             <a href="#inicio" class="hover:text-orange-500 transition">Inicio</a>
             <a href="#menu" class="hover:text-orange-500 transition">Menú</a>
@@ -46,7 +45,6 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
     <header id="inicio" class="h-screen flex items-center justify-center text-center px-4 hero-gradient">
         <div class="max-w-4xl" data-aos="fade-up">
             <h1 class="text-5xl md:text-7xl font-800 mb-6 uppercase tracking-tight">El mejor lugar para <span class="text-orange-500 neon-text">comer, tomar algo</span> y descansar.</h1>
@@ -58,12 +56,10 @@
         </div>
     </header>
 
-    <!-- PROMOS SECTION -->
     <section id="promos" class="py-20 bg-zinc-900 px-6">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-3xl font-bold mb-12 text-center">PROMOCIONES <span class="text-yellow-400">ESPECIALES</span></h2>
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Promo 1 -->
                 <div class="bg-gradient-to-br from-red-900 to-black p-8 rounded-3xl border border-red-600/30 flex flex-col justify-between">
                     <div>
                         <span class="bg-yellow-400 text-black px-3 py-1 rounded-full text-xs font-bold uppercase">Más vendido</span>
@@ -75,7 +71,6 @@
                         <button onclick="addToCart('Promo Camionero', 8500)" class="bg-white text-black px-4 py-2 rounded-xl font-bold hover:bg-orange-500 hover:text-white transition">Agregar</button>
                     </div>
                 </div>
-                <!-- Promo 2 -->
                 <div class="bg-gradient-to-br from-zinc-800 to-black p-8 rounded-3xl border border-orange-600/30 flex flex-col justify-between">
                     <div>
                         <span class="bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold uppercase">Happy Hour</span>
@@ -86,7 +81,6 @@
                         <span class="text-3xl font-bold text-orange-500 italic text-sm">CONSULTAR MARCAS</span>
                     </div>
                 </div>
-                <!-- Promo 3 -->
                 <div class="bg-gradient-to-br from-red-900 to-black p-8 rounded-3xl border border-red-600/30 flex flex-col justify-between">
                     <div>
                         <span class="bg-yellow-400 text-black px-3 py-1 rounded-full text-xs font-bold uppercase">Familiar</span>
@@ -102,12 +96,10 @@
         </div>
     </section>
 
-    <!-- MENU SECTION -->
     <section id="menu" class="py-20 px-6">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-4xl font-bold mb-4">NUESTRO <span class="text-red-600 italic">MENÚ</span></h2>
             
-            <!-- Category Filter -->
             <div class="flex flex-wrap gap-4 mb-12">
                 <button class="category-pill bg-orange-600 text-white px-6 py-2 rounded-full font-medium transition">Todo</button>
                 <button class="category-pill glass px-6 py-2 rounded-full font-medium transition">Hamburguesas</button>
@@ -115,9 +107,7 @@
                 <button class="category-pill glass px-6 py-2 rounded-full font-medium transition">Bebidas</button>
             </div>
 
-            <!-- Grid de Productos -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Producto 1 -->
                 <div class="glass rounded-3xl overflow-hidden card-hover">
                     <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80" alt="Hamburguesa" class="h-48 w-full object-cover">
                     <div class="p-6">
@@ -130,7 +120,6 @@
                     </div>
                 </div>
 
-                <!-- Producto 2 -->
                 <div class="glass rounded-3xl overflow-hidden card-hover">
                     <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80" alt="Pizza" class="h-48 w-full object-cover">
                     <div class="p-6">
@@ -143,7 +132,6 @@
                     </div>
                 </div>
 
-                <!-- Producto 3 -->
                 <div class="glass rounded-3xl overflow-hidden card-hover">
                     <img src="https://images.unsplash.com/photo-1594000191219-6923403ebf18?auto=format&fit=crop&w=500&q=80" alt="Milanesa" class="h-48 w-full object-cover">
                     <div class="p-6">
@@ -156,7 +144,6 @@
                     </div>
                 </div>
 
-                <!-- Producto 4 -->
                 <div class="glass rounded-3xl overflow-hidden card-hover">
                     <img src="https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?auto=format&fit=crop&w=500&q=80" alt="Bebida" class="h-48 w-full object-cover">
                     <div class="p-6">
@@ -172,7 +159,6 @@
         </div>
     </section>
 
-    <!-- SOBRE NOSOTROS -->
     <section id="nosotros" class="py-20 bg-zinc-950 px-6">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
             <div class="md:w-1/2">
@@ -192,7 +178,6 @@
         </div>
     </section>
 
-    <!-- CONTACTO Y MAPA -->
     <section class="py-20 px-6">
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
             <div>
@@ -214,16 +199,14 @@
         </div>
     </section>
 
-    <!-- SHOPPING CART (MODAL) -->
     <div id="cart-modal" class="fixed inset-0 bg-black/80 z-[60] hidden flex justify-end">
         <div class="bg-zinc-900 w-full max-w-md h-full p-8 shadow-2xl flex flex-col">
             <div class="flex justify-between items-center mb-8">
                 <h2 class="text-2xl font-bold">Tu Pedido</h2>
-                <button onclick="toggleCart()" class="text-2xl">&times;</button>
+                <button onclick="toggleCart()" class="text-2xl">×</button>
             </div>
             <div id="cart-items" class="flex-1 overflow-y-auto space-y-4">
-                <!-- Items se cargan aquí -->
-            </div>
+                </div>
             <div class="mt-8 pt-8 border-t border-zinc-700">
                 <div class="flex justify-between text-xl font-bold mb-6">
                     <span>Total:</span>
@@ -235,56 +218,38 @@
     </div>
 
     <footer class="py-16 border-t border-zinc-800 text-center text-gray-400 bg-black relative overflow-hidden">
-
-    <!-- Glow Effect -->
-    <div class="absolute inset-0 bg-gradient-to-t from-orange-900/10 to-transparent pointer-events-none"></div>
-
-    <div class="relative z-10">
-
-        <!-- LOGO -->
-        <div class="flex justify-center mb-6">
-            <img 
-                src="logo-carretero.jpeg"
-                alt="El Carretero Logo"
-                class="h-32 md:h-40 object-contain drop-shadow-[0_0_25px_rgba(255,120,0,0.5)] hover:scale-105 transition duration-500"
-            >
+        <div class="absolute inset-0 bg-gradient-to-t from-orange-900/10 to-transparent pointer-events-none"></div>
+        <div class="relative z-10">
+            <div class="flex justify-center mb-6">
+                <img 
+                    src="logo-carretero.jpeg"
+                    alt="El Carretero Logo"
+                    class="h-32 md:h-40 object-contain drop-shadow-[0_0_25px_rgba(255,120,0,0.5)] hover:scale-105 transition duration-500"
+                >
+            </div>
+            <p class="text-lg md:text-xl font-semibold text-orange-400 italic mb-3">
+                Más de 20 años junto al camionero
+            </p>
+            <p class="max-w-2xl mx-auto text-gray-500 mb-8 px-4">
+                Comida caliente, descanso y buena atención para quienes hacen kilómetros todos los días.
+            </p>
+            <div class="flex justify-center gap-6 text-3xl mb-8">
+                <a href="#" class="hover:text-orange-500 transition hover:scale-125 duration-300">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="hover:text-green-500 transition hover:scale-125 duration-300">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="#" class="hover:text-blue-500 transition hover:scale-125 duration-300">
+                    <i class="fab fa-facebook"></i>
+                </a>
+            </div>
+            <div class="w-32 h-[2px] bg-gradient-to-r from-transparent via-orange-500 to-transparent mx-auto mb-6"></div>
+            <p class="text-sm text-gray-600">
+                © 2024 EL CARRETERO · Paso de los Libres, Corrientes · Todos los derechos reservados.
+            </p>
         </div>
-
-        <!-- FRASE -->
-        <p class="text-lg md:text-xl font-semibold text-orange-400 italic mb-3">
-            Más de 20 años junto al camionero
-        </p>
-
-        <!-- DESCRIPCION -->
-        <p class="max-w-2xl mx-auto text-gray-500 mb-8 px-4">
-            Comida caliente, descanso y buena atención para quienes hacen kilómetros todos los días.
-        </p>
-
-        <!-- REDES -->
-        <div class="flex justify-center gap-6 text-3xl mb-8">
-            <a href="#" class="hover:text-orange-500 transition hover:scale-125 duration-300">
-                <i class="fab fa-instagram"></i>
-            </a>
-
-            <a href="#" class="hover:text-green-500 transition hover:scale-125 duration-300">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-
-            <a href="#" class="hover:text-blue-500 transition hover:scale-125 duration-300">
-                <i class="fab fa-facebook"></i>
-            </a>
-        </div>
-
-        <!-- LINEA -->
-        <div class="w-32 h-[2px] bg-gradient-to-r from-transparent via-orange-500 to-transparent mx-auto mb-6"></div>
-
-        <!-- COPYRIGHT -->
-        <p class="text-sm text-gray-600">
-            © 2024 EL CARRETERO · Paso de los Libres, Corrientes · Todos los derechos reservados.
-        </p>
-
-    </div>
-</footer>
+    </footer>
 
     <script>
         let cart = [];
@@ -293,8 +258,20 @@
         function addToCart(name, price) {
             cart.push({name, price});
             updateCart();
-            // Animación feedback
-            alert(`Añadido: ${name}`);
+            
+            // Notificación sutil estilo Toast (Reemplaza al alert nativo)
+            Swal.fire({
+                text: `Añadido: ${name}`,
+                icon: 'success',
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 2000,
+                timerProgressBar: true,
+                background: '#1c1c1e',
+                color: '#ffffff',
+                iconColor: '#ea580c' // Color naranja para combinar con el sitio
+            });
         }
 
         function updateCart() {
@@ -333,7 +310,17 @@
         }
 
         function sendOrder() {
-            if (cart.length === 0) return alert("Tu carrito está vacío");
+            if (cart.length === 0) {
+                // Alerta moderna si el carrito está vacío
+                Swal.fire({
+                    text: "Tu carrito está vacío",
+                    icon: 'warning',
+                    confirmButtonColor: '#ea580c',
+                    background: '#1c1c1e',
+                    color: '#ffffff'
+                });
+                return;
+            }
             
             let message = "Hola! Quiero realizar el siguiente pedido:%0A";
             cart.forEach(item => {

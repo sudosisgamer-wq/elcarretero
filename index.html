@@ -20,7 +20,17 @@
 
     <!-- NAV BAR -->
     <nav class="fixed w-full z-50 glass px-6 py-4 flex justify-between items-center">
-        <div class="text-2xl font-800 tracking-tighter text-red-600 italic">El<span class="text-orange-500">Carretero</span></div>
+        <div class="flex items-center gap-3">
+    <img 
+        src="logo-carretero.jpeg" 
+        alt="Logo"
+        class="h-14 w-14 rounded-full object-cover border-2 border-orange-500 shadow-lg"
+    >
+
+    <div class="text-xl md:text-2xl font-black tracking-tight text-white">
+        EL <span class="text-orange-500">CARRETERO</span>
+    </div>
+     </div>
         <div class="hidden md:flex space-x-8 font-medium">
             <a href="#inicio" class="hover:text-orange-500 transition">Inicio</a>
             <a href="#menu" class="hover:text-orange-500 transition">Menú</a>
@@ -224,14 +234,57 @@
         </div>
     </div>
 
-    <footer class="py-12 border-t border-zinc-800 text-center text-gray-500">
-        <div class="mb-4 flex justify-center">
-    <img src="logo-carretero.jpeg" 
-         alt="El Carretero Logo" 
-         class="h-28 md:h-36 object-contain drop-shadow-2xl">
-         </div>
-        <p>&copy; 2026 El Carretero. Todos los derechos reservados.</p>
-    </footer>
+    <footer class="py-16 border-t border-zinc-800 text-center text-gray-400 bg-black relative overflow-hidden">
+
+    <!-- Glow Effect -->
+    <div class="absolute inset-0 bg-gradient-to-t from-orange-900/10 to-transparent pointer-events-none"></div>
+
+    <div class="relative z-10">
+
+        <!-- LOGO -->
+        <div class="flex justify-center mb-6">
+            <img 
+                src="logo-carretero.jpeg"
+                alt="El Carretero Logo"
+                class="h-32 md:h-40 object-contain drop-shadow-[0_0_25px_rgba(255,120,0,0.5)] hover:scale-105 transition duration-500"
+            >
+        </div>
+
+        <!-- FRASE -->
+        <p class="text-lg md:text-xl font-semibold text-orange-400 italic mb-3">
+            Más de 20 años junto al camionero
+        </p>
+
+        <!-- DESCRIPCION -->
+        <p class="max-w-2xl mx-auto text-gray-500 mb-8 px-4">
+            Comida caliente, descanso y buena atención para quienes hacen kilómetros todos los días.
+        </p>
+
+        <!-- REDES -->
+        <div class="flex justify-center gap-6 text-3xl mb-8">
+            <a href="#" class="hover:text-orange-500 transition hover:scale-125 duration-300">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="#" class="hover:text-green-500 transition hover:scale-125 duration-300">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+
+            <a href="#" class="hover:text-blue-500 transition hover:scale-125 duration-300">
+                <i class="fab fa-facebook"></i>
+            </a>
+        </div>
+
+        <!-- LINEA -->
+        <div class="w-32 h-[2px] bg-gradient-to-r from-transparent via-orange-500 to-transparent mx-auto mb-6"></div>
+
+        <!-- COPYRIGHT -->
+        <p class="text-sm text-gray-600">
+            © 2024 EL CARRETERO · Paso de los Libres, Corrientes · Todos los derechos reservados.
+        </p>
+
+    </div>
+</footer>
 
     <script>
         let cart = [];

@@ -14,45 +14,35 @@
         .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
         .card-hover:hover { transform: translateY(-10px); transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3); }
         .neon-text { text-shadow: 0 0 10px rgba(234, 88, 12, 0.8); }
-        .category-pill:hover { background-color: #dc2626; color: white; }
     </style>
 </head>
 <body>
 
    <nav class="fixed w-full z-50 glass px-6 py-0 flex justify-between items-center backdrop-blur-md overflow-visible">
-  
-  <!-- Solo logo, sin nombre -->
-  <div class="flex items-center overflow-visible">
-    <img 
-  src="logo-carretero.png" 
-  alt="Logo El Carretero"
-  class="h-24 w-24 md:h-32 md:w-32 rounded-full object-contain -mb-8
-         drop-shadow-[0_0_25px_rgba(234,88,12,0.85)]
-         ring-4 ring-orange-500/20
-         hover:scale-105 hover:drop-shadow-[0_0_35px_rgba(234,88,12,1)] 
-         transition duration-300 cursor-pointer"
-  onclick="window.location.href='#inicio'"
->
-  </div>
+      <div class="flex items-center overflow-visible">
+        <img 
+          src="logo-carretero.png" 
+          alt="Logo El Carretero"
+          class="h-24 w-24 md:h-32 md:w-32 rounded-full object-contain -mb-8 drop-shadow-[0_0_25px_rgba(234,88,12,0.85)] ring-4 ring-orange-500/20 hover:scale-105 hover:drop-shadow-[0_0_35px_rgba(234,88,12,1)] transition duration-300 cursor-pointer"
+          onclick="window.location.href='#inicio'"
+        >
+      </div>
 
-  <!-- Links -->
-  <div class="hidden md:flex space-x-8 font-medium">
-    <a href="#inicio" class="hover:text-orange-500 transition">Inicio</a>
-    <a href="#menu" class="hover:text-orange-500 transition">Menú</a>
-    <a href="#promos" class="hover:text-orange-500 transition">Promos</a>
-    <a href="#nosotros" class="hover:text-orange-500 transition">Nosotros</a>
-  </div>
+      <div class="hidden md:flex space-x-8 font-medium">
+        <a href="#inicio" class="hover:text-orange-500 transition">Inicio</a>
+        <a href="#menu" class="hover:text-orange-500 transition">Menú</a>
+        <a href="#promos" class="hover:text-orange-500 transition">Promos</a>
+        <a href="#nosotros" class="hover:text-orange-500 transition">Nosotros</a>
+      </div>
 
-  <!-- Carrito + hamburguesa -->
-  <div class="flex items-center space-x-4">
-    <button onclick="toggleCart()" class="relative p-2 bg-orange-600 rounded-full hover:bg-red-700 transition">
-      <i class="fas fa-shopping-cart"></i>
-      <span id="cart-count" class="absolute -top-1 -right-1 bg-white text-black text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
-    </button>
-    <button class="md:hidden text-2xl text-white"><i class="fas fa-bars"></i></button>
-  </div>
-
-</nav>
+      <div class="flex items-center space-x-4">
+        <button onclick="toggleCart()" class="relative p-2 bg-orange-600 rounded-full hover:bg-red-700 transition">
+          <i class="fas fa-shopping-cart"></i>
+          <span id="cart-count" class="absolute -top-1 -right-1 bg-white text-black text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+        </button>
+        <button class="md:hidden text-2xl text-white"><i class="fas fa-bars"></i></button>
+      </div>
+    </nav>
 
     <header id="inicio" class="h-screen flex items-center justify-center text-center px-4 hero-gradient">
         <div class="max-w-4xl" data-aos="fade-up">
@@ -109,15 +99,17 @@
         <div class="max-w-7xl mx-auto">
             <h2 class="text-4xl font-bold mb-4">NUESTRO <span class="text-red-600 italic">MENÚ</span></h2>
             
-            <div class="flex flex-wrap gap-4 mb-12">
-                <button class="category-pill bg-orange-600 text-white px-6 py-2 rounded-full font-medium transition">Todo</button>
-                <button class="category-pill glass px-6 py-2 rounded-full font-medium transition">Hamburguesas</button>
-                <button class="category-pill glass px-6 py-2 rounded-full font-medium transition">Pizzas</button>
-                <button class="category-pill glass px-6 py-2 rounded-full font-medium transition">Bebidas</button>
+            <div class="flex flex-wrap gap-4 mb-12" id="categories-container">
+                <button onclick="filterCategory('all', this)" class="btn-filter bg-orange-600 text-white px-6 py-2 rounded-full font-medium transition duration-300 hover:bg-red-600">Todo</button>
+                <button onclick="filterCategory('hamburguesas', this)" class="btn-filter glass text-white px-6 py-2 rounded-full font-medium transition duration-300 hover:bg-red-600">Hamburguesas</button>
+                <button onclick="filterCategory('pizzas', this)" class="btn-filter glass text-white px-6 py-2 rounded-full font-medium transition duration-300 hover:bg-red-600">Pizzas</button>
+                <button onclick="filterCategory('milanesas', this)" class="btn-filter glass text-white px-6 py-2 rounded-full font-medium transition duration-300 hover:bg-red-600">Milanesas</button>
+                <button onclick="filterCategory('bebidas', this)" class="btn-filter glass text-white px-6 py-2 rounded-full font-medium transition duration-300 hover:bg-red-600">Bebidas</button>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="glass rounded-3xl overflow-hidden card-hover">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="products-grid">
+                
+                <div class="glass rounded-3xl overflow-hidden card-hover transition duration-300" data-category="hamburguesas">
                     <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80" alt="Hamburguesa" class="h-48 w-full object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold">Mega Bacon Burguer</h3>
@@ -129,7 +121,7 @@
                     </div>
                 </div>
 
-                <div class="glass rounded-3xl overflow-hidden card-hover">
+                <div class="glass rounded-3xl overflow-hidden card-hover transition duration-300" data-category="pizzas">
                     <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80" alt="Pizza" class="h-48 w-full object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold">Pizza Especial</h3>
@@ -141,7 +133,7 @@
                     </div>
                 </div>
 
-                <div class="glass rounded-3xl overflow-hidden card-hover">
+                <div class="glass rounded-3xl overflow-hidden card-hover transition duration-300" data-category="milanesas">
                     <img src="https://images.unsplash.com/photo-1594000191219-6923403ebf18?auto=format&fit=crop&w=500&q=80" alt="Milanesa" class="h-48 w-full object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold">Milanesa Nápoli</h3>
@@ -153,7 +145,7 @@
                     </div>
                 </div>
 
-                <div class="glass rounded-3xl overflow-hidden card-hover">
+                <div class="glass rounded-3xl overflow-hidden card-hover transition duration-300" data-category="bebidas">
                     <img src="https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?auto=format&fit=crop&w=500&q=80" alt="Bebida" class="h-48 w-full object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold">Cerveza Tirada</h3>
@@ -164,7 +156,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
+
+                </div>
         </div>
     </section>
 
@@ -176,12 +169,12 @@
             <div class="md:w-1/2">
                 <h2 class="text-4xl font-bold mb-6 italic text-orange-500">Hecho para el camino.</h2>
                 <p class="text-gray-300 text-lg leading-relaxed mb-6">
-                    Sabemos que viajar cansa. Por eso creamos un espacio donde el camionero y el viajero no solo vienen a comer, sino a recargar energías. Comida casera, ambiente tranquilo, música suave y estacionamiento vigilado.
+                    Sabemos que viajar cansa. Por eso creamos un espacio donde el camionero y el viajero no solo vienen a comer, sino a recargar energías. Comida casera, ambiente tranquilo, música suave.
                 </p>
                 <ul class="space-y-4">
                     <li class="flex items-center gap-3"><i class="fas fa-check-circle text-red-600"></i> Abierto hasta tarde</li>
                     <li class="flex items-center gap-3"><i class="fas fa-check-circle text-red-600"></i> Wi-Fi gratis de alta velocidad</li>
-                    <li class="flex items-center gap-3"><i class="fas fa-check-circle text-red-600"></i> Duchas y descanso para choferes</li>
+                    <li class="flex items-center gap-3"><i class="fas fa-check-circle text-red-600"></i> Descanso para choferes</li>
                 </ul>
             </div>
         </div>
@@ -192,9 +185,9 @@
             <div>
                 <h2 class="text-3xl font-bold mb-8">ENCUÉNTRANOS</h2>
                 <div class="glass p-8 rounded-3xl">
-                    <p class="flex items-center gap-4 mb-4"><i class="fas fa-map-marker-alt text-orange-500"></i> Ruta Nacional 7, Km 245</p>
-                    <p class="flex items-center gap-4 mb-4"><i class="fas fa-phone text-orange-500"></i> +54 9 11 1234 5678</p>
-                    <p class="flex items-center gap-4 mb-4"><i class="fas fa-clock text-orange-500"></i> Todos los días: 19:00 - 05:00 hs</p>
+                    <p class="flex items-center gap-4 mb-4"><i class="fas fa-map-marker-alt text-orange-500"></i> Ruta Nacional 117, Km 8.7</p>
+                    <p class="flex items-center gap-4 mb-4"><i class="fas fa-phone text-orange-500"></i> +54 9 3772 30 3777</p>
+                    <p class="flex items-center gap-4 mb-4"><i class="fas fa-clock text-orange-500"></i> Lunes a Sabado: 11:00 - 00:00 hs</p>
                     <div class="flex gap-4 mt-8">
                         <a href="#" class="text-3xl hover:text-orange-500"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="text-3xl hover:text-orange-500"><i class="fab fa-whatsapp"></i></a>
@@ -214,8 +207,7 @@
                 <h2 class="text-2xl font-bold">Tu Pedido</h2>
                 <button onclick="toggleCart()" class="text-2xl">×</button>
             </div>
-            <div id="cart-items" class="flex-1 overflow-y-auto space-y-4">
-                </div>
+            <div id="cart-items" class="flex-1 overflow-y-auto space-y-4"></div>
             <div class="mt-8 pt-8 border-t border-zinc-700">
                 <div class="flex justify-between text-xl font-bold mb-6">
                     <span>Total:</span>
@@ -260,15 +252,39 @@
         </div>
     </footer>
 
-   <script>
+    <script>
         let cart = [];
         let total = 0;
+
+        // 🛠️ NUEVA FUNCIÓN: LOGICA DINÁMICA DE FILTRADO
+        function filterCategory(category, button) {
+            const cards = document.querySelectorAll('#products-grid > div');
+            
+            // Ocultar o mostrar tarjetas según categoría
+            cards.forEach(card => {
+                const productCategory = card.getAttribute('data-category');
+                if (category === 'all' || productCategory === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Cambiar estilos visuales del botón seleccionado
+            const buttons = document.querySelectorAll('.btn-filter');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-orange-600');
+                btn.classList.add('glass');
+            });
+            
+            button.classList.remove('glass');
+            button.classList.add('bg-orange-600');
+        }
 
         function addToCart(name, price) {
             cart.push({name, price});
             updateCart();
             
-            // Notificación flotante premium (Se va sola en 2 segundos y no traba la pantalla)
             Swal.fire({
                 text: `Añadido: ${name}`,
                 icon: 'success',

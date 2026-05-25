@@ -13,17 +13,26 @@
         
         /* NUEVA VERSIÓN MEJORADA DEL FONDO */
       .hero-gradient { 
-      background: 
-        /* 1. Degradado: Arriba es más claro para ver el pan, abajo es oscuro para leer el texto */
-        linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(5,5,5,0.8) 50%, rgba(5,5,5,1) 100%), 
-        url('comida-hero.jpg'); 
-    background-size: cover; 
-    background-position: center 20%; /* Sube un poco la foto para ver mejor el relleno */
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* 2. Efecto Parallax: La foto se queda quieta al bajar, se ve muy premium */
+    /* 1. La foto se pone dos veces: una borrosa de fondo y una clara encima */
+    background: 
+        linear-gradient(rgba(0,0,0,0.5), rgba(5,5,5,1)), /* Capa oscura para leer bien */
+        url('milanesa.jpg'); 
     
-    /* 3. Filtros: Le da más "vida" a los colores de la carne y la lechuga */
-    filter: brightness(1.1) contrast(1.1) saturate(1.2); 
+    background-repeat: no-repeat;
+    
+    /* 2. Aquí está el truco: 'contain' hace que la foto se vea entera sin cortarse */
+    background-size: contain; 
+    
+    /* 3. La centramos */
+    background-position: center center; 
+    
+    /* 4. Esto evita que la foto se repita y se vea limpia */
+    background-color: #050505; 
+
+    /* 5. Ajuste para que en celulares se siga viendo bien */
+    @media (max-width: 768px) {
+        background-size: cover;
+    }
 }
 
         .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
@@ -56,7 +65,7 @@
     </nav>
 
     <!-- HERO -->
-    <header id="inicio" class="min-h-[80vh] flex items-center flex items-center justify-center text-center px-4 hero-gradient">
+    <header id="inicio" class="h-screen flex items-end pb-20 justify-center text-center px-4 hero-gradient">
         <div class="max-w-4xl">
             <h1 class="text-5xl md:text-7xl font-800 mb-6 uppercase tracking-tight">El mejor lugar para <span class="text-orange-500 neon-text">comer, tomar algo</span> y descansar.</h1>
             <p class="text-gray-300 text-xl mb-8">Abierto toda la noche para el viajero que sabe elegir lo mejor.</p>

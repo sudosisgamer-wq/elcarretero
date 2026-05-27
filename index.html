@@ -125,15 +125,16 @@
             <div class="flex flex-wrap gap-4 mb-12">
                 <button onclick="filterCategory('all', this)" class="btn-filter bg-orange-600 text-white px-6 py-2 rounded-full font-medium transition duration-300">Todo</button>
                 <button onclick="filterCategory('hamburguesas', this)" class="btn-filter glass text-white px-6 py-2 rounded-full font-medium transition duration-300">Hamburguesas</button>
-                <button onclick="filterCategory('milanesas', this)" class="btn-filter glass text-white px-6 py-2 rounded-full font-medium transition duration-300">Milanesas</button>
+                <button onclick="filterCategory('platos', this)" class="btn-filter glass text-white px-6 py-2 rounded-full font-medium transition duration-300">Platos Principales</button>
                 <button onclick="filterCategory('pizzas', this)" class="btn-filter glass text-white px-6 py-2 rounded-full font-medium transition duration-300">Pizzas</button>
                 <button onclick="filterCategory('bebidas', this)" class="btn-filter glass text-white px-6 py-2 rounded-full font-medium transition duration-300">Bebidas</button>
+                <button onclick="filterCategory('postres', this)" class="btn-filter glass text-white px-6 py-2 rounded-full font-medium transition duration-300">Postres</button>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="products-grid">
                 <!-- Productos -->
                 <div class="glass rounded-3xl overflow-hidden card-hover transition duration-300" data-category="hamburguesas">
-                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500" class="h-48 w-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500" alt="Mega Bacon Burguer" class="h-48 w-full object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-white">Mega Bacon Burguer</h3>
                         <p class="text-gray-400 text-sm mt-2 mb-4">Doble carne, cheddar, bacon y salsa secreta.</p>
@@ -144,8 +145,8 @@
                     </div>
                 </div>
 
-                <div class="glass rounded-3xl overflow-hidden card-hover transition duration-300" data-category="milanesas">
-                    <img src="https://images.unsplash.com/photo-1594000191219-6923403ebf18?auto=format&fit=crop&w=500" class="h-48 w-full object-cover">
+                <div class="glass rounded-3xl overflow-hidden card-hover transition duration-300" data-category="platos">
+                    <img src="milanesa_napolitana.png" alt="Milanesa Nápoli" class="h-48 w-full object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-white">Milanesa Nápoli</h3>
                         <p class="text-gray-400 text-sm mt-2 mb-4 text-orange-400 font-semibold italic">Incluye guarnición a elección.</p>
@@ -156,8 +157,33 @@
                     </div>
                 </div>
 
+                <div class="glass rounded-3xl overflow-hidden card-hover transition duration-300" data-category="platos">
+                    <img src="chuleta_novillo.png" alt="Chuleta de Novillo" class="h-48 w-full object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white">Chuleta de Novillo</h3>
+                        <p class="text-gray-400 text-sm mt-2 mb-4 text-orange-400 font-semibold italic">Incluye guarnición a elección.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-yellow-500">$7.500</span>
+                            <button onclick="prepararProducto('p5', 'Chuleta de Novillo', 7500, true)" class="bg-red-600 p-3 rounded-xl hover:bg-orange-500 transition"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass rounded-3xl overflow-hidden card-hover transition duration-300" data-category="platos">
+                    <img src="chuleta_cerdo.png" alt="Chuleta de Cerdo" class="h-48 w-full object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white">Chuleta de Cerdo</h3>
+                        <p class="text-gray-400 text-sm mt-2 mb-4 text-orange-400 font-semibold italic">Incluye guarnición a elección.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-yellow-500">$7.200</span>
+                            <button onclick="prepararProducto('p6', 'Chuleta de Cerdo', 7200, true)" class="bg-red-600 p-3 rounded-xl hover:bg-orange-500 transition"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+
                 <div class="glass rounded-3xl overflow-hidden card-hover transition duration-300" data-category="pizzas">
-                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500" class="h-48 w-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500" alt="Pizza Especial" class="h-48 w-full object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-white">Pizza Especial</h3>
                         <p class="text-gray-400 text-sm mt-2 mb-4">Muzzarella, jamón, morrones y aceitunas.</p>
@@ -169,7 +195,7 @@
                 </div>
 
                 <div class="glass rounded-3xl overflow-hidden card-hover transition duration-300" data-category="bebidas">
-                    <img src="https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?auto=format&fit=crop&w=500" class="h-48 w-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?auto=format&fit=crop&w=500" alt="Cerveza Tirada" class="h-48 w-full object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-white">Cerveza Tirada</h3>
                         <p class="text-gray-400 text-sm mt-2 mb-4">Pinta de 500ml fría, artesanal.</p>
@@ -179,6 +205,93 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="glass rounded-3xl overflow-hidden card-hover transition duration-300" data-category="bebidas">
+                    <img src="coca_600ml.png" alt="Coca Cola 600ml" class="h-48 w-full object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white">Coca Cola 600ml</h3>
+                        <p class="text-gray-400 text-sm mt-2 mb-4">Gaseosa individual bien fría.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-yellow-500">$1.800</span>
+                            <button onclick="prepararProducto('p7', 'Coca Cola 600ml', 1800, false)" class="bg-red-600 p-3 rounded-xl hover:bg-orange-500 transition"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass rounded-3xl overflow-hidden card-hover transition duration-300" data-category="bebidas">
+                    <img src="coca_vidrio_1l.png" alt="Coca Cola de Vidrio 1L" class="h-48 w-full object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white">Coca Cola de Vidrio 1L</h3>
+                        <p class="text-gray-400 text-sm mt-2 mb-4">La versión clásica en envase de vidrio retornable.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-yellow-500">$2.800</span>
+                            <button onclick="prepararProducto('p8', 'Coca Cola de Vidrio 1L', 2800, false)" class="bg-red-600 p-3 rounded-xl hover:bg-orange-500 transition"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass rounded-3xl overflow-hidden card-hover transition duration-300" data-category="bebidas">
+                    <img src="coca_1_25l.png" alt="Coca Cola 1.25L" class="h-48 w-full object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white">Coca Cola 1.25L</h3>
+                        <p class="text-gray-400 text-sm mt-2 mb-4">Ideal para compartir en mesa.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-yellow-500">$3.200</span>
+                            <button onclick="prepararProducto('p9', 'Coca Cola 1.25L', 3200, false)" class="bg-red-600 p-3 rounded-xl hover:bg-orange-500 transition"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Postres -->
+                <div class="glass rounded-3xl overflow-hidden card-hover transition duration-300" data-category="postres">
+                    <img src="batata_queso.png" alt="Batata con Queso" class="h-48 w-full object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white">Batata con Queso</h3>
+                        <p class="text-gray-400 text-sm mt-2 mb-4">El clásico vigilante: dulce de batata y queso fresco.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-yellow-500">$3.000</span>
+                            <button onclick="prepararProducto('p10', 'Batata con Queso', 3000, false)" class="bg-red-600 p-3 rounded-xl hover:bg-orange-500 transition"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass rounded-3xl overflow-hidden card-hover transition duration-300" data-category="postres">
+                    <img src="batata_queso.png" alt="Membrillo con Queso" class="h-48 w-full object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white">Membrillo con Queso</h3>
+                        <p class="text-gray-400 text-sm mt-2 mb-4">El clásico vigilante: dulce de membrillo y queso fresco.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-yellow-500">$3.000</span>
+                            <button onclick="prepararProducto('p11', 'Membrillo con Queso', 3000, false)" class="bg-red-600 p-3 rounded-xl hover:bg-orange-500 transition"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass rounded-3xl overflow-hidden card-hover transition duration-300" data-category="postres">
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500" alt="Mamón con Queso" class="h-48 w-full object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white">Mamón con Queso</h3>
+                        <p class="text-gray-400 text-sm mt-2 mb-4">Mamón regional en almíbar acompañado con queso.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-yellow-500">$3.500</span>
+                            <button onclick="prepararProducto('p12', 'Mamón con Queso', 3500, false)" class="bg-red-600 p-3 rounded-xl hover:bg-orange-500 transition"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass rounded-3xl overflow-hidden card-hover transition duration-300" data-category="postres">
+                    <img src="flan.jpg" alt="Flan Casero" class="h-48 w-full object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white">Flan Casero</h3>
+                        <p class="text-gray-400 text-sm mt-2 mb-4 text-orange-400 font-semibold italic">Elegí crema, dulce de leche o mixto.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-yellow-500">$3.200</span>
+                            <button onclick="prepararFlan('p13', 'Flan Casero', 3200)" class="bg-red-600 p-3 rounded-xl hover:bg-orange-500 transition"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
         </div>
     </section>
@@ -248,6 +361,19 @@
             <div class="mt-8 flex gap-3">
                 <button onclick="cerrarModalGuarnicion()" class="flex-1 py-4 rounded-xl bg-zinc-800 font-bold hover:bg-zinc-700 transition">Cancelar</button>
                 <button onclick="confirmarGuarnicion()" class="flex-1 py-4 rounded-xl bg-orange-600 font-bold hover:bg-orange-700 transition shadow-lg shadow-orange-900/20">Confirmar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL FLAN -->
+    <div id="modal-flan" class="fixed inset-0 bg-black/90 z-[100] hidden flex items-center justify-center p-4">
+        <div class="bg-zinc-900 w-full max-w-md rounded-3xl p-8 border border-zinc-700 shadow-2xl">
+            <h3 class="text-2xl font-bold mb-2">Elegí el acompañamiento del flan</h3>
+            <p id="nombre-flan-modal" class="text-orange-500 font-semibold mb-6 italic">Flan Casero</p>
+            <div id="opciones-flan" class="space-y-3"></div>
+            <div class="mt-8 flex gap-3">
+                <button onclick="cerrarModalFlan()" class="flex-1 py-4 rounded-xl bg-zinc-800 font-bold hover:bg-zinc-700 transition">Cancelar</button>
+                <button onclick="confirmarFlan()" class="flex-1 py-4 rounded-xl bg-orange-600 font-bold hover:bg-orange-700 transition shadow-lg shadow-orange-900/20">Confirmar</button>
             </div>
         </div>
     </div>
@@ -339,6 +465,55 @@
             agregarAlCarrito(idUnico, nombreCombinado, precioTotal);
             cerrarModalGuarnicion();
         }
+
+        // --- FLAN CUSTOMIZATION ---
+        const flanOptionsData = [
+            { id: "f1", nombre: "Solo", precio: 0 },
+            { id: "f2", nombre: "Con Crema", precio: 500 },
+            { id: "f3", nombre: "Con Dulce de Leche", precio: 500 },
+            { id: "f4", nombre: "Mixto (Crema y Dulce)", precio: 800 }
+        ];
+
+        let flanEnConfiguracion = null;
+
+        function prepararFlan(id, nombre, precio) {
+            flanEnConfiguracion = { id, nombre, precio };
+            abrirModalFlan();
+        }
+
+        function abrirModalFlan() {
+            const modal = document.getElementById('modal-flan');
+            const lista = document.getElementById('opciones-flan');
+            lista.innerHTML = '';
+            flanOptionsData.forEach((f, index) => {
+                lista.innerHTML += `
+                    <label class="radio-card block cursor-pointer">
+                        <input type="radio" name="flan-option" value="${f.id}" ${index === 0 ? 'checked' : ''} class="hidden">
+                        <div class="radio-content p-4 rounded-2xl border border-zinc-700 hover:border-orange-500 transition flex justify-between items-center text-white">
+                            <span>${f.nombre}</span>
+                            <span class="text-orange-500 font-bold">${f.precio > 0 ? '+$' + f.precio : 'Gratis'}</span>
+                        </div>
+                    </label>
+                `;
+            });
+            modal.classList.remove('hidden');
+        }
+
+        function cerrarModalFlan() {
+            document.getElementById('modal-flan').classList.add('hidden');
+            flanEnConfiguracion = null;
+        }
+
+        function confirmarFlan() {
+            const idOption = document.querySelector('input[name="flan-option"]:checked').value;
+            const option = flanOptionsData.find(f => f.id === idOption);
+            const idUnico = `${flanEnConfiguracion.id}_${option.id}`;
+            const nombreCombinado = `${flanEnConfiguracion.nombre} (${option.nombre})`;
+            const precioTotal = flanEnConfiguracion.precio + option.precio;
+            agregarAlCarrito(idUnico, nombreCombinado, precioTotal);
+            cerrarModalFlan();
+        }
+
 
         function agregarAlCarrito(id, nombre, precio) {
             const index = carrito.findIndex(item => item.id === id);
